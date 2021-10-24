@@ -30,7 +30,14 @@
     'kids'
 */
 
-//CODE HERE
+let pizza = {
+    name: "Deep Dish",
+    price: 19.99,
+    category: "entree",
+    popularity: 5,
+    rating: 4.9,
+    tags: ["family meal", "best value"]
+}
 
 
 
@@ -42,7 +49,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -52,7 +59,7 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[tags.split - 2])
 
 
 /*

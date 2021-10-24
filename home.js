@@ -21,7 +21,13 @@
     'Welcome back, Andrew'
 */
 
-//CODE HERE
+const greetUser = (username) => {
+    return (`Welcome back, ${username}`)
+}
+
+let currentUser = greetUser('Andrew')
+console.log(currentUser)
+
 
 
 
@@ -49,7 +55,18 @@
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-//CODE HERE
+function canWeDeliver(zipCode) {
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++)
+        if (x = deliveryAreaZipCodes[i]){
+            return (`Sorry, we can't deliver to that address`)
+        } else {
+            return (`You're in our delivery zone!`)
+        }
+
+        let userInput = canWeDeliver(84606)
+        console.log(userInput)
+        console.log(canWeDeliver(85305))
+
 
 
 
@@ -70,7 +87,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+function canWeDeliverTwo() {
+    if (deliveryAreaZipCodes.includes(x));{
+    return (`You're in our delivery zone!`); 
+} else {
+    return (`Sorry, we can't deliver to that address`)
+}
+}
+
+let search = canWeDeliverTwo()
 
 
 //////////////////PROBLEM 3////////////////////
@@ -122,5 +147,4 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
-
-//CODE HERE
+}
