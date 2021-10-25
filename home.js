@@ -55,17 +55,26 @@ console.log(currentUser)
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-function canWeDeliver(zipCode) {
-    for (let i = 0; i < deliveryAreaZipCodes.length; i++)
-        if (x = deliveryAreaZipCodes[i]){
-            return (`Sorry, we can't deliver to that address`)
-        } else {
-            return (`You're in our delivery zone!`)
-        }
+canWeDeliver = (zipCode) => {
+	var found = false;
+	
+	for (var i in deliveryAreaZipCodes) {
+		if(zipCode == deliveryAreaZipCodes[i]){
+			found = true;
+			break; // Found it no need to loop anymore.
+		}
+	}
+	
+	if(found){
+		console.log("You're in our delivery zone!");
+	}else{
+		console.log("Sorry, we can't deliver to that address");	
+	}
+}
 
-        let userInput = canWeDeliver(84606)
-        console.log(userInput)
-        console.log(canWeDeliver(85305))
+canWeDeliver(84606);
+canWeDeliver(85205);
+
 
 
 
@@ -87,15 +96,25 @@ function canWeDeliver(zipCode) {
     Name your new function `canWeDeliverTwo`.
 */
 
-function canWeDeliverTwo() {
-    if (deliveryAreaZipCodes.includes(x));{
-    return (`You're in our delivery zone!`); 
-} else {
-    return (`Sorry, we can't deliver to that address`)
-}
-}
+// function canWeDeliverTwo() {
+//     if (deliveryAreaZipCodes.includes(zipCode));{
+//     return (`You're in our delivery zone!`); 
+// } else {
+//     return (`Sorry, we can't deliver to that address`)
+// }
+// }
 
-let search = canWeDeliverTwo()
+canWeDeliverTwo = (zipCode) => {
+	if(deliveryAreaZipCodes.includes(zipCode)){
+		console.log("You're in our delivery zone!");
+	}else{
+		console.log("Sorry, we can't deliver to that address");
+	}
+}
+canWeDeliverTwo(84606);
+canWeDeliverTwo(85205);
+
+// let search = canWeDeliverTwo()
 
 
 //////////////////PROBLEM 3////////////////////
@@ -131,7 +150,9 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-//CODE HERE
+deals[0].title = deals[0].title.replace("15", "10");
+
+console.log(deals[0].title);
 
 
 
@@ -147,4 +168,6 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
-}
+deals[1].desc = deals[1].desc.replace("March", "April").trim();
+
+console.log(deals[1].desc);
