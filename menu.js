@@ -59,7 +59,7 @@ console.log(pizza.popularity)
     get the value.
 */
 
-console.log(pizza.tags[tags.split - 2])
+console.log(pizza.tags[1])
 
 
 /*
@@ -69,7 +69,9 @@ console.log(pizza.tags[tags.split - 2])
     Print the value of your new price variable.
 */
 
-//CODE HERE
+pizza.price = 9.50;
+console.log(pizza.price);
+
 
 
 /*
@@ -78,8 +80,10 @@ console.log(pizza.tags[tags.split - 2])
 
     Print the value of your category variable. 
 */
-
 //CODE HERE
+pizza.category = "entree";
+console.log(pizza.category);
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -95,6 +99,52 @@ console.log(pizza.tags[tags.split - 2])
 */
 
 //CODE HERE
+let foodArr = [
+    {
+        name:"cauliflower crust pizza",
+        price: 10.51,
+        category: "entree",
+        popularity: 9,
+        rating: 3,
+        tags: ["gluten free"]
+    },
+	
+	{
+		name:"lasagna slice",
+		price:10.52,
+		category:"single portions",
+		popularity:8,
+		rating:12,
+		tags:["kids"]
+	},
+	
+	{
+		name:"Deep Dish",
+		price:20.50,
+		category:"family meal",
+		popularity:7,
+		rating:2,
+		tags:["family meal"]
+	},
+	
+	{
+		name:"Large Drink",
+		price:2.54,
+		category:"drinks",
+		popularity:54,
+		rating:14,
+		tags:["drinks", "refills"]
+	},
+		
+	{
+		name:"Fried Oreos",
+		price:3.55,
+		category:"dessert",
+		popularity:55,
+		rating:15,
+		tags:["desserts"]
+	}
+];
 
 
 
@@ -112,8 +162,11 @@ console.log(pizza.tags[tags.split - 2])
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(function (el) {
+	return el.tags.indexOf("family meal") >=0;
+});
 
+console.log(filteredFood);
 
 
 //////////////////PROBLEM 5////////////////////
@@ -155,7 +208,48 @@ console.log(pizza.tags[tags.split - 2])
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+function filterByProperty(property, number, type){
+	
+	var filtered = foodArr.filter(function (el) {
+		
+		switch(property) {
+			case "rating":{
+				if(isTypeAbove(type)){
+					return el.rating > number;
+				}else{
+					return el.rating > number;
+				}
+				break;
+			}
+			case "price":{
+				if(isTypeAbove(type)){
+					return el.price > number;
+				}else{
+					return el.price < number;
+				}
+				break;
+			}
+			case "popularity":{
+				if(isTypeAbove(type)){
+					return el.popularity > number;
+				}else{
+					return el.popularity < number;
+				}
+				break;
+			}
+			default:{
+				break;
+			}
+		}
+	});
+	
+	return filtered;
+}
+
+function isTypeAbove(type){
+	return type == "above";
+}
+
 
 
 /*
@@ -165,4 +259,6 @@ console.log(pizza.tags[tags.split - 2])
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+console.log(filterByProperty("rating", 3, "above"));
+console.log(filterByProperty("price", 2, "below"));
+console.log(filterByProperty("popularity", 8, "above"));
