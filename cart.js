@@ -35,7 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(function(total, food){
+    return total + food.price
+  }, 0);
+  
+  console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,6 +58,11 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax){
+	return (cartTotal + (cartTotal * tax)) - couponValue;
+}
+
+console.log(calcFinalPrice(300,40,0.0825));
 
 
 
@@ -79,6 +88,12 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+	firstName(String): Use to store First Name of customer.
+	lastName(String): Use to store Last Name of customer.
+	shippingAddress(String): Use to store Shipping Address of customer.
+	billingAddress(String): Use to store Billing Address of customer.
+	paymentMethod(String): Use to store Payment Method of customer.
+	cart(Array of String): Name of item that customer bought.
 
 */
 
@@ -88,3 +103,13 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+	firstName:"John", 
+	lastName:"Snow",
+	shippingAddress:"101 Wall St",
+	billingAddress:"12345 Winterfell",
+	paymentMethod:"Visa",
+	cart:["Deep dish pizza", "large coke", "fried oreos"]
+};
+
+console.log(customer);
